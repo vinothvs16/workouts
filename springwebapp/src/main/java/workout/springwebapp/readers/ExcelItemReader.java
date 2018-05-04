@@ -57,12 +57,13 @@ public class ExcelItemReader implements ItemReader<String[]>,ItemStream{
 
         int rowsCount = sheet.getLastRowNum();
         System.out.println("Total Number of Rows: " + (rowsCount + 1));
-        for (; currRow <= rowsCount; currRow++) {
+        while(currRow <= rowsCount)  {
         	Row row =sheet.getRow(currRow);
         	String [] rowArr= new String[row.getLastCellNum()];
-        	for(int i=0;i<=row.getLastCellNum();i++) {
+        	for(int i=0;i<row.getLastCellNum();i++) {
         		rowArr[i]=row.getCell(i).toString();
         	}
+        	currRow++;
         	return rowArr;
         }
 		return null;

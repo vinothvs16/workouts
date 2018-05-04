@@ -26,7 +26,7 @@ public class DBItemWriters implements ItemWriter<User> {
 		JdbcTemplate template = new JdbcTemplate(dataSource);
 		for (User user : users) {
 			template.update(
-					"insert into user values(" + user.getId() + "," + user.getName() + "," + user.getAge() + ")");
+					"insert into user (name,age) values('"+ user.getName() + "'," + user.getAge() + ")");
 		}
 
 	}

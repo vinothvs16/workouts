@@ -10,7 +10,7 @@ public class StringArrayUserProcessor implements ItemProcessor<String[],User>{
 		User user = new User();
 		//user.setId(Integer.valueOf(arg0[0]));
 		user.setName(arg0[0]);
-		user.setAge(Integer.valueOf(arg0[1]));
+		user.setAge(Double.valueOf((arg0[1])).intValue());
 		return user;
 	}
 
